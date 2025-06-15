@@ -1,50 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aaron ❤️ Yvonne（我们的故事）</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我们的纪念日</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Aaron ❤️ Yvonne</h1>
-    <p class="subtitle">从现在，到永远。</p>
-    
-    <div class="days-counter">
-      ❤️ 我们已经在一起 <span id="days">...</span>。
-    </div>
-
+    <h1>💖 Yvonne & Aaron 💖</h1>
+    <p class="subtitle">自从我们在一起已经...</p>
+    <p class="days-counter" id="days"></p>
     <div class="hearts">
-      <span>❤️</span><span>💖</span><span>💘</span>
+      <span>💘</span>
+      <span>💖</span>
+      <span>❤️</span>
     </div>
   </div>
 
-  <footer>
-    <p>It's all about love.</p>
-  </footer>
+  <div class="gallery-section">
+    <h2>📸 我们的相册</h2>
+    <div class="gallery">
+      <div class="photo-card">
+        <img src="images/photo1.jpg" alt="第一次见面">
+        <p>我的新壁纸！💕</p>
+      </div>
+      <div class="photo-card">
+        <img src="images/photo2.jpg" alt="阳光下的你">
+        <p>阳光下的你</p>
+      </div>
+      <div class="photo-card">
+        <img src="images/photo3.jpg" alt="奶茶时间">
+        <p>奶茶时间 🧋</p>
+      </div>
+      <div class="photo-card">
+        <img src="images/photo4.jpg" alt="太美辣🌶️">
+        <p>太美辣🌶️</p>
+      </div>
+      <div class="photo-card">
+        <img src="images/photo5.jpg" alt="蘑菇眼镜👓">
+        <p>蘑菇眼镜👓</p>
+      </div>
+      <div class="photo-card">
+        <img src="images/photo6.jpg" alt="我还得再练练。。。">
+        <p>我还得再练练。。。😅</p>
+      </div>
+    </div>
+  </div>
 
-  <script src="script.js">
-    const startDate = new Date("2025-05-16T00:00:00");
-    const today = new Date();
+  <footer>© 2025 Aaron & Yvonne</footer>
 
-    let years = today.getFullYear() - startDate.getFullYear();
-    let months = today.getMonth() - startDate.getMonth();
-    let days = today.getDate() - startDate.getDate();
-
-    if (days < 0) {
-      months -= 1;
-      const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-      days += prevMonth.getDate();
-    }
-
-    if (months < 0) {
-      years -= 1;
-      months += 12;
-    }
-
-    document.getElementById("days").textContent =
-      `${years} 年${years !== 1 ? '' : ''}, ${months} 个月${months !== 1 ? '' : ''}, ${days} 天${days !== 1 ? '' : ''}`;
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

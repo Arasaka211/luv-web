@@ -1,98 +1,134 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom right, #ffdee9, #b5fffc);
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    animation: fadeIn 2s ease-in;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #ffdee9, #b5fffc);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  animation: fadeIn 2s ease-in;
+  position: relative;
 }
 
 .container {
-    max-width: 700px;
-    width: 90%;
-    margin: auto;
+  text-align: center;
+  animation: floatIn 1s ease-out;
 }
 
 h1 {
-    font-size: 2.8em;
-    color: #e91e63;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.2em;
+  font-size: 3em;
+  color: #e91e63;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
-    font-size: 1.4em;
-    color: #444;
-    margin: 0.2em 0 1em;
-    line-height: 1.5em;
-}
-
-.hearts {
-    margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 .hearts span {
-    font-size: 2em;
-    width: 1.4em;
-    display: inline-block;
-    text-align: center;
-    animation: pulse 1.5s infinite ease-in-out;
-    cursor: pointer;
-    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
-}
-
-.days-counter {
-    font-size: 1.3em;
-    color: #ff4081;
-    margin: 20px 0 30px;
-    font-weight: 600;
+  font-size: 2em;
+  margin: 0 8px;
+  animation: pulse 1.5s infinite ease-in-out;
+  cursor: pointer;
 }
 
 footer {
-    position: relative;
-    font-size: 0.9em;
-    color: #555;
-    opacity: 0.7;
-    margin-top: 50px;
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.9em;
+  color: #555;
+  opacity: 0.7;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes floatIn {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.3); opacity: 1; }
-}
-
-.falling-heart {
-    position: fixed;
-    top: -40px;
-    font-size: 2em;
-    animation: fall 2s linear forwards;
-    pointer-events: none;
-    z-index: 999;
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
 }
 
 @keyframes fall {
-    0% { transform: translateY(-40px); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
+  0% {
+    transform: translateY(-100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.falling-heart {
+  position: absolute;
+  top: -40px;
+  font-size: 2.5em;
+  animation: fall 2s linear forwards;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.days-counter {
+  font-size: 1.3em;
+  color: #ff4081;
+  margin: 15px 0 25px;
+  font-weight: bold;
+}
+
+.gallery-section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2em;
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.photo-card {
+  width: 180px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card p {
+  margin: 10px 0;
+  font-size: 0.95em;
+  color: #444;
 }
